@@ -72,9 +72,7 @@ ROT.Map.Cellular.prototype.create = function(callback) {
 				newMap[i][j] = 1;
 			} else if (!cur && born.indexOf(ncount) != -1) { /* born */
 				newMap[i][j] = 1;
-			}
-			
-			if (callback) { callback(i, j, newMap[i][j]); }
+			}			
 		}
 	}
 	
@@ -83,6 +81,14 @@ ROT.Map.Cellular.prototype.create = function(callback) {
 	// optinially connect every space
 	if (this._options.perfect) {
 		this._completeMaze();	
+	}
+
+	if (callback) { 
+		for(var i = 0; i < this._width; i++) {
+			for(var j = 0; j < this._height; j++) {
+				callback(i, j, newMap[i][j]);
+			}
+		}
 	}
 }
 
