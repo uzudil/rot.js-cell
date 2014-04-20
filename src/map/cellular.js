@@ -110,8 +110,8 @@ ROT.Map.Cellular.prototype._completeMaze = function() {
 	var all_free_space = [];
 	var not_connected = {};
 	// find all free space
-	for(var x = 0; x < WIDTH; x++) {
-		for(var y = 0; y < HEIGHT; y++) {
+	for(var x = 0; x < this._width; x++) {
+		for(var y = 0; y < this._height; y++) {
 			if(this._freeSpace(x, y)) {
 				var p = [x, y];
 				not_connected[this._pointKey(p)] = p;

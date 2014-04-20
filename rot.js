@@ -1,6 +1,6 @@
 /*
 	This is rot.js, the ROguelike Toolkit in JavaScript.
-	Version 0.5~dev, generated on Sat Apr 12 09:44:19 PDT 2014.
+	Version 0.5~dev, generated on Sun Apr 20 08:57:11 PDT 2014.
 */
 /**
  * @namespace Top-level ROT namespace
@@ -2286,8 +2286,8 @@ ROT.Map.Cellular.prototype._completeMaze = function() {
 	var all_free_space = [];
 	var not_connected = {};
 	// find all free space
-	for(var x = 0; x < WIDTH; x++) {
-		for(var y = 0; y < HEIGHT; y++) {
+	for(var x = 0; x < this._width; x++) {
+		for(var y = 0; y < this._height; y++) {
 			if(this._freeSpace(x, y)) {
 				var p = [x, y];
 				not_connected[this._pointKey(p)] = p;
